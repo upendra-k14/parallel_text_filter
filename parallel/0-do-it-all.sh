@@ -32,7 +32,7 @@ cat $dir/*.$trg > $dir/output/corpus.$trg
     $src \
     $trg
 
-./4-moses-scripts-subword-nmt.sh \
-    $dir \
-    $src \
-    $trg
+#./4-moses-scripts-subword-nmt.sh \
+#    $dir \
+#    $src \
+#    $trg
