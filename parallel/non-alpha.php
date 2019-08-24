@@ -8,8 +8,8 @@ $target_sentences	= $argv[2];
 $source_code     	= $argv[3];
 $target_code    	= $argv[4];
 
-$source_regex       = "/[^" . $regex[$source_code] . '\n ]+/';
-$target_regex       = "/[^" . $regex[$target_code] . '\n ]+/';
+$source_regex       = "/[^" . $regex[$source_code] . '\n ]+/u';
+$target_regex       = "/[^" . $regex[$target_code] . '\n ]+/u';
 
 //Open files
 $inSRC = fopen($source_sentences, "r") or die("Can't open source input file!");
@@ -22,12 +22,19 @@ $outSRC_rem = fopen(str_replace("/output","/output/removed",$source_sentences)."
 $outTRG_rem = fopen(str_replace("/output","/output/removed",$target_sentences).".nonalpha", "w") or die("Can't create removed target output file!");
 
 $i = 0;
+$counter = 0;
 while (($sourceSentence = fgets($inSRC)) !== false && ($targetSentence = fgets($inTRG)) !== false) {
 	
 	//Let's see how many non-alphabetic characters are in the sentences.
 	//Latvian and Estonian diacritics only... Add more if working with other languages
 	$onlyAlpha_source = preg_replace($source_regex, "", $sourceSentence);
-	$onlyAlpha_target = preg_replace($target_regex, "", $targetSentence);
+    $onlyAlpha_target = preg_replace($target_regex, "", $targetSentence);
+
+    echo "S-".$counter." ".$onlyAlpha_source;
+    echo "T-".$counter." ".$onlyAlpha_target."\n"; 
+    $counter++;
+    echo "Filtered S-len".strlen($onlyAlpha_source)." T-len".strlen($onlyAlpha_target)."\n";
+    echo "S-len".strlen($sourceSentence)." T-len".strlen($targetSentence)."\n";
 	
 	if(
 		(strlen($onlyAlpha_source) > strlen($sourceSentence)/2) && 

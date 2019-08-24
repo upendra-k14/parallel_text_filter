@@ -5,6 +5,8 @@ $regex['en'] = "a-zA-Z";
 $regex['fi'] = "a-zA-ZäåöšžÄÅÖŠŽ";
 $regex['tr'] = "a-zA-ZçğöşüÇĞÖŞÜ";
 $regex['de'] = "a-zA-ZäöüßÄÖÜẞ";
+$regex['ta'] = "\p{Tamil}";
+$regex['te'] = "\p{Telugu}";
 
 /*
 $regex['ta'] = "\u0b80\u0b81ஂஃ\u0b84அஆஇஈஉஊ\u0b8b\u0b8c\u0b8dஎஏஐ\u0b91ஒஓஔக\u0b96\u0b97\u0b98ஙச\u0b9bஜ\u0b9dஞட\u0ba0\u0ba1\u0ba2ணத\u0ba5\u0ba6\u0ba7நனப\u0bab\u0bac\u0badமயரறலளழவஶஷஸஹ\u0bba\u0bbb\u0bbc\u0bbdாிீுூ\u0bc3\u0bc4\u0bc5ெேை\u0bc9ொோௌ்\u0bce\u0bcfௐ\u0bd1\u0bd2\u0bd3\u0bd4\u0bd5\u0bd6ௗ\u0bd8\u0bd9\u0bda\u0bdb\u0bdc\u0bdd\u0bde\u0bdf\u0be0\u0be1\u0be2\u0be3\u0be4\u0be5௦௧௨௩௪௫௬௭௮௯௰௱௲௳௴௵௶௷௸௹௺\u0bfb\u0bfc\u0bfd\u0bfe\u0bff";
@@ -14,6 +16,7 @@ $regex['bn'] = "ঀঁংঃ\u0984অআইঈউঊঋঌ\u098d\u098eএঐ\u09
 $regex['hi'] = "ऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾ";
 */
 
+/*
 $regex['ta'] = "";
 foreach (range(2944, 3071) as $number){
     $regex['ta'] = $regex['ta'].chr($number);
@@ -39,4 +42,4 @@ foreach (range(2304, 2431) as $number){
         $regex['hi'] = $regex['hi'].chr($number);
 }
 
-
+ */

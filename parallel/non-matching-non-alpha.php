@@ -9,8 +9,8 @@ $source_code     	= $argv[3];
 $target_code    	= $argv[4];
 $ratio				= 5; //how big of a mismatch will we allow?
 
-$source_regex       = "/[," . $regex[$source_code] . " ]+/";
-$target_regex       = "/[," . $regex[$target_code] . " ]+/";
+$source_regex       = "/[," . $regex[$source_code] . " ]+/u";
+$target_regex       = "/[," . $regex[$target_code] . " ]+/u";
 
 //Open files
 $inSRC = fopen($source_sentences, "r") or die("Can't open source input file!");
